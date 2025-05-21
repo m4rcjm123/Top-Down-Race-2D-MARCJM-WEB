@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Unity Game</title>
-  <script src="Build/BuildWebGL.loader.js"></script> <!-- Ruta corregida -->
+  <script src="Build/BuildWebGL.loader.js"></script>
   <style>
     body, html {
       margin: 0;
@@ -20,6 +20,25 @@
 </head>
 <body>
   <div id="unityContainer"></div>
-  <script src="popup.js"></script>
+  <script type="module">
+    window.addEventListener("load", () => {
+      const container = document.querySelector("#unityContainer");
+
+      if (typeof createUnityInstance !== "function") {
+        console.error("❌ createUnityInstance no está definido");
+        return;
+      }
+
+      createUnityInstance(container, {
+        dataUrl: "Build/BuildWebGL.data",
+        frameworkUrl: "Build/BuildWebGL.framework.js",
+        codeUrl: "Build/BuildWebGL.wasm",
+      }).then((unityInstance) => {
+        console.log("✅ Juego cargado");
+      }).catch((error) => {
+        console.error("❌ Error al cargar el juego:", error);
+      });
+    });
+  </script>
 </body>
 </html>

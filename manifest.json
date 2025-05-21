@@ -4,9 +4,15 @@
   "version": "1.0",
   "description": "Unity game inside Chrome extension",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
   },
   "permissions": [],
+  "icons": {
+    "16": "icon.png"
+  },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   },

@@ -20,17 +20,6 @@
 </head>
 <body>
   <div id="unityContainer"></div>
-  <script>
-    var container = document.querySelector("#unityContainer");
-    createUnityInstance(container, {
-      dataUrl: "Build/game.data",
-      frameworkUrl: "Build/game.framework.js",
-      codeUrl: "Build/game.wasm",
-    }).then((unityInstance) => {
-      console.log("Juego cargado");
-    }).catch((error) => {
-      console.error(error);
-    });
-  </script>
+  <script src="popup.js"></script> <!-- Aquí está la clave -->
 </body>
 </html>

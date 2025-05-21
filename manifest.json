@@ -1,18 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "Unity Race Game",
+  "name": "Top Down Race 2D MARCJM",
   "version": "1.0",
-  "description": "Juego de carreras 2D hecho en Unity para Chrome",
+  "description": "Unity game inside Chrome extension",
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "hello_extensions.png"
-    }
+    "default_popup": "popup.html"
   },
   "permissions": [],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
   "web_accessible_resources": [
     {
-      "resources": ["Build/*"],
+      "resources": [
+        "Build/*",
+        "TemplateData/*",
+        "unity-loader.js"
+      ],
       "matches": ["<all_urls>"]
     }
   ]

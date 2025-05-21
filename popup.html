@@ -1,44 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Unity Game</title>
-  <script src="Build/BuildWebGL.loader.js"></script>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
-      width: 600px;
-      height: 400px;
-      overflow: hidden;
+      height: 100%;
+      width: 100%;
     }
-    #unityContainer {
+
+    iframe {
       width: 100%;
       height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <div id="unityContainer"></div>
-  <script type="module">
-    window.addEventListener("load", () => {
-      const container = document.querySelector("#unityContainer");
-
-      if (typeof createUnityInstance !== "function") {
-        console.error("❌ createUnityInstance no está definido");
-        return;
-      }
-
-      createUnityInstance(container, {
-        dataUrl: "Build/BuildWebGL.data",
-        frameworkUrl: "Build/BuildWebGL.framework.js",
-        codeUrl: "Build/BuildWebGL.wasm",
-      }).then((unityInstance) => {
-        console.log("✅ Juego cargado");
-      }).catch((error) => {
-        console.error("❌ Error al cargar el juego:", error);
-      });
-    });
-  </script>
+  <iframe src="index.html"></iframe>
 </body>
 </html>

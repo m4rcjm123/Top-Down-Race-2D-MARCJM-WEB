@@ -1,10 +1,21 @@
 {
-    "name": "Hello Extensions",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 3,
-    "action": {
-      "default_popup": "hello.html",
-      "default_icon": "hello_extensions.png"
+  "manifest_version": 3,
+  "name": "Unity Race Game",
+  "version": "1.0",
+  "description": "Juego de carreras 2D hecho en Unity para Chrome",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
     }
-  }
+  },
+  "permissions": [],
+  "web_accessible_resources": [
+    {
+      "resources": ["Build/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

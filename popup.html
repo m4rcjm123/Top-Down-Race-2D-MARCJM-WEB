@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Unity Game</title>
+  <script src="Build/UnityLoader.js"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+    }
+    #unityContainer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="unityContainer"></div>
+  <script>
+    var container = document.querySelector("#unityContainer");
+    createUnityInstance(container, {
+      dataUrl: "Build/game.data",
+      frameworkUrl: "Build/game.framework.js",
+      codeUrl: "Build/game.wasm",
+    }).then((unityInstance) => {
+      console.log("Juego cargado");
+    }).catch((error) => {
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
